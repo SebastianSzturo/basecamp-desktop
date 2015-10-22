@@ -1,5 +1,6 @@
 var app = require('app');  // Module to control application life.
 var BrowserWindow = require('browser-window');  // Module to create native browser window.
+var Menu = require('menu');
 
 // Report crashes to our server.
 require('crash-reporter').start();
@@ -7,6 +8,9 @@ require('crash-reporter').start();
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 var mainWindow = null;
+
+// Templates
+var menuTemplate = require('./app_menu');
 
 // Quit when all windows are closed.
 app.on('window-all-closed', function() {
@@ -29,6 +33,10 @@ app.on('activate-with-no-open-windows', function() {
 // initialization and is ready to create browser windows.
 app.on('ready', function() {
 
+  // Set menu
+  var mainMenu = Menu.buildFromTemplate(menuTemplate);
+  Menu.setApplicationMenu(mainMenu);
+
   // Create the browser window.
   mainWindow = new BrowserWindow({
     width: 900, height: 800,
@@ -47,6 +55,16 @@ app.on('ready', function() {
     require('shell').openExternal(url)
     event.preventDefault();
   });
+
+  // Update OSX badge
+  if(process.platform == 'darwin') {
+    mainWindow.on('page-title-updated', function(event, title) {
+      var unreadCount = getUnreadCount(title);
+      app.dock.setBadge(unreadCount);
+      if (unreadCount > 0)
+        app.dock.bounce('informational');
+    });
+  }
 
   // Hide window on OSX instead of closing it
   mainWindow.on('close', function(e){
@@ -67,3 +85,7 @@ app.on('ready', function() {
 
   mainWindow.show();
 });
+
+function getUnreadCount(title) {
+  return title.substring(0, title.indexOf(')')).split('(').join('');
+}
