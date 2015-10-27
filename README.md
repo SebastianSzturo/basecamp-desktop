@@ -13,7 +13,7 @@ An unoffical desktop client for OSX and Windows. Build with [Electron](http://el
 
 ## Installation
 
-Download the newest version from the [latest release](https://github.com/bcalik/Whatsapp-Desktop/releases).
+Download the newest version from the [latest release](https://github.com/SebastianSzturo/basecamp-desktop/releases).
 
 ## Build
 
