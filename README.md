@@ -15,7 +15,15 @@ An unoffical desktop client for OSX and Windows. Build with [Electron](http://el
 
 Download the newest version from the [latest release](https://github.com/SebastianSzturo/basecamp-desktop/releases).
 
-## Build
+## Contributing
+
+1. Fork it ( https://github.com/SebastianSzturo/basecamp-dekstop/fork )
+2. Create your feature branch (`git checkout -b my-new-feature`)
+3. Commit your changes (`git commit -am 'Add some feature'`)
+4. Push to the branch (`git push origin my-new-feature`)
+5. Create a new Pull Request
+
+## Build it yourself
 
 To build this project you need ``node`` and ``npm``.
 
@@ -29,11 +37,3 @@ Build OSX and Windows binaries.
 ```
 npm run build
 ```
-
-## Contributing
-
-1. Fork it ( https://github.com/SebastianSzturo/basecamp-dekstop/fork )
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create a new Pull Request
