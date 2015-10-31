@@ -1,4 +1,4 @@
-# Basecamp 3 for Desktop
+# Basecamp 3 for Desktop :tent:
 
 An unoffical desktop client for OSX and Windows. Build with [Electron](http://electron.atom.io/).
 
