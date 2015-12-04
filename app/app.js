@@ -87,5 +87,13 @@ app.on('ready', function() {
 });
 
 function getUnreadCount(title) {
-  return title.substring(0, title.indexOf(')')).split('(').join('');
+  var regex = /^\((\d+)\)/;
+  var match = regex.exec(title);
+
+  var badgeCount = ""
+  if(match != undefined) {
+    badgeCount = match[1];
+  }
+
+  return badgeCount;
 }
