@@ -56,6 +56,16 @@ app.on('ready', function() {
     event.preventDefault();
   });
 
+  // Open all non-target=_blank links externally which aren't basecamp
+  mainWindow.webContents.on("will-navigate", function(event, url) {
+
+    regex = /(37signals.com|basecamp.com)/;
+    if (!url.match(regex)) {
+      require('shell').openExternal(url);
+      event.preventDefault();
+    }
+  });
+
   // Update OSX badge
   if(process.platform == 'darwin') {
     mainWindow.on('page-title-updated', function(event, title) {
