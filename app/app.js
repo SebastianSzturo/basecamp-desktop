@@ -42,6 +42,7 @@ app.on('ready', function() {
     width: 900, height: 800,
     "type": "toolbar",
     "title": "Basecamp 3",
+    "icon": "./assets/shared/icon.png",
     "node-integration": false
   });
 
