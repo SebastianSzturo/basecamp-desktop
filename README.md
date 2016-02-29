@@ -2,7 +2,6 @@
 
 **UPDATE: There is a new offical Basecamp 3 Desktop Client available [here](https://m.signalvnoise.com/basecamp-3-for-mac-and-windows-is-here-fcf000f6ef1c#.sr82xaaft)**
 
---
 
 An unoffical desktop client for OSX and Windows. Build with [Electron](http://electron.atom.io/).
 
